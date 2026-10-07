@@ -14,7 +14,7 @@
 /* =========================================================
    PROFESSIONAL A4 RESUME
    210mm × 297mm
-   Keep image.png in the same folder as this HTML file.
+   Keep resume-photo.png in the same folder as this HTML file.
    ========================================================= */
 
 @page {
@@ -23,11 +23,11 @@
 }
 
 :root {
-  --navy: #12213f;
-  --blue: #2457d6;
-  --text: #263348;
-  --muted: #66748a;
-  --line: #d9e0e9;
+  --navy: #102A43;
+  --blue: #2563EB;
+  --text: #172033;
+  --muted: #64748B;
+  --line: #D9E2EC;
   --soft: #f5f7fa;
   --white: #ffffff;
 }
@@ -48,8 +48,8 @@ body {
 }
 
 body {
-  font-size: 8.7pt;
-  line-height: 1.38;
+  font-size: 8.3pt;
+  line-height: 1.42;
 }
 
 .resume {
@@ -147,11 +147,13 @@ body {
 .section-title {
   display: flex;
   align-items: center;
-  gap: 3mm;
+  gap: 2.5mm;
   margin: 0 0 2.1mm;
+  padding-left: 2.3mm;
+  border-left: 1.2mm solid var(--blue);
   color: var(--navy);
-  font-size: 8.9pt;
-  line-height: 1;
+  font-size: 9.2pt;
+  line-height: 1.1;
   font-weight: 800;
   letter-spacing: 1.35px;
   text-transform: uppercase;
@@ -234,7 +236,7 @@ body {
 .project-name {
   margin: 0;
   color: var(--text);
-  font-size: 8.75pt;
+  font-size: 9pt;
   line-height: 1.25;
   font-weight: 700;
 }
@@ -323,6 +325,23 @@ body {
   font-size: 6.6pt;
 }
 
+/* ================= PDF DOWNLOAD ================= */
+.download-button {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  z-index: 2;
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 16px;
+  background: var(--navy);
+  color: #fff;
+  font: 600 14px "Inter", Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(18, 33, 63, .18);
+}
+.download-button:hover { background: var(--blue); }
+
 /* ================= MOBILE PREVIEW ================= */
 
 @media screen and (max-width: 850px) {
@@ -380,6 +399,7 @@ body {
 /* ================= PRINT ================= */
 
 @media print {
+  .download-button { display: none; }
   html,
   body {
     width: 210mm;
@@ -406,6 +426,8 @@ body {
 
 <body>
 
+<button class="download-button" type="button" onclick="window.print()" aria-label="Save this resume as a PDF">Download PDF</button>
+
 <main class="resume">
 
   <!-- ================= HEADER ================= -->
@@ -416,14 +438,11 @@ body {
       <h1 class="name">Prathap S</h1>
 
       <div class="role">
-        B.Tech Artificial Intelligence &amp; Data Science
+        AI &amp; Data Science Student | Software Developer
       </div>
 
       <p class="summary">
-        AI &amp; Data Science student with hands-on experience building practical
-        applications across computer vision, local LLM systems, full-stack web
-        development and automation. Seeking internship opportunities in AI/ML,
-        software engineering or related technology roles.
+        AI &amp; Data Science undergraduate building practical software across computer vision, local LLMs, full-stack web development and automation. Seeking an internship to contribute to AI/ML or software engineering projects.
       </p>
 
       <div class="contact">
@@ -461,7 +480,7 @@ body {
     <!-- image.png must be in the same folder as this HTML file -->
     <img
       class="photo"
-      src="image.png"
+      src="resume-photo.png"
       alt="Prathap Senthilkumar"
     >
 
